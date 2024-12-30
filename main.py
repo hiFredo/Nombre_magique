@@ -1,6 +1,7 @@
 import random 
 NOMBRE_MIN= 1 
 NOMBRE_MAX= 10 
+NB_VIE = 4
 
 NOMBRE_MAGIQUE = random.randint(NOMBRE_MIN,NOMBRE_MAX) 
 def demander_nombre(nb_min,nb_max):
@@ -18,17 +19,26 @@ def demander_nombre(nb_min,nb_max):
                 print(f"ERREUR : Le  nombre doit etre  entre ({nb_min} et {nb_max})  ") 
                 nombre_int = 0 
     return nombre_int   
-
-while True:
+nombre = 0 
+while not nombre==NOMBRE_MAGIQUE and NB_VIE>0  :
     nombre = demander_nombre(NOMBRE_MIN,NOMBRE_MAX)
-    
-    if nombre>NOMBRE_MAGIQUE :
-        print("Le nombre magique est plus petit")
+    print(f"Il vous reste {NB_VIE} vie ")
+    if nombre==NOMBRE_MAGIQUE :
+        print("Bravo, vous avez gagné !")
 
     elif nombre<NOMBRE_MAGIQUE : 
         print("Le nombre magique est plus grand")
+        NB_VIE-=1
+
     else :
-        break
-                
-print("Bravo, vous avez gagné !") 
+        print("Le nombre magique est plus petiT")
+        NB_VIE-=1
+    
+if NB_VIE == 0 :
+    print(f"Vous avez perdue ! le nombre magique était : {NOMBRE_MAGIQUE} ")    
+        
+
+
+
+
 
