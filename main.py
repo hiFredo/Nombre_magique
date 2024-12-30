@@ -1,7 +1,8 @@
+import random 
 NOMBRE_MIN= 1 
 NOMBRE_MAX= 10 
 
-NOMBRE_MAGIQUE = 5 
+NOMBRE_MAGIQUE = random.randint(NOMBRE_MIN,NOMBRE_MAX) 
 def demander_nombre(nb_min,nb_max):
     nombre_int= 0 
     while nombre_int ==0 :
